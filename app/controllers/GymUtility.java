@@ -42,7 +42,7 @@ public class GymUtility {
     }
 
     public static boolean isIdealBodyWeight(Member member,Assessment assessment){
-        double height= member.getHeight();
+        double height= member.getHeight()/100;
         double weight;
         double idealBodyWeight= 50;
         boolean isIdealBodyWeight = false;
@@ -52,10 +52,10 @@ public class GymUtility {
             weight=assessment.getWeight();
         }
 
-        if(member.getGender().equals("M")){
+        if(member.getGender().equals("Male")){
             idealBodyWeight=50.0+2.3*((height*39.3701)-60);
         }
-        if(member.getGender().equals("F")||member.getGender().equals("Unspecified")){
+        if(member.getGender().equals("Female")||member.getGender().equals("Unspecified")){
             idealBodyWeight=45.5+2.3*((height*39.3701)-60);
         }
 
