@@ -52,4 +52,23 @@ public class MemberAccounts extends Controller{
         }
         return member;
     }
+
+    public static void editMemberDetails(){
+        Member member=getLoggedInMember();
+        render("editmemberdetails.html",member);
+    }
+
+    public static void editMember(String firstname,String lastname,String email,String password,String gender,int height,double startingweight){
+        Logger.info("Editing existing member "+email);
+        Member member=getLoggedInMember();
+        member.setFirstname(firstname);
+        member.setLastname(lastname);
+        member.setEmail(email);
+        member.setPassword(password);
+        member.setGender(gender);
+        member.setHeight(height);
+        member.setStartingweight(startingweight);
+        member.save();
+        redirect("/dashboard");
+    }
 }

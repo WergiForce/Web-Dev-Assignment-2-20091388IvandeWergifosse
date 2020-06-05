@@ -1,11 +1,23 @@
 #{extends 'main.html' /}
-#{set title:'Signup' /}
-#{welcomemenu id:"signup"/}
+#{set title:'Edit Member Details' /}
+#{menu id:"editmemberdetails"/}
+
+<header class="ui header">
+    <div class="ui horizontal segments">
+        <div class="ui center aligned segment">
+            <h2>Current Details</h2>
+            <h3>${member.firstname} ${member.lastname}</h3>
+            <p>Email: ${member.email}, Gender: ${member.gender}</p>
+            <p>Height: ${member.height} cm, Starting Weight: ${member.startingweight} kg</p>
+        </div>
+    </div>
+</header>
 
 <div class="ui two column grid basic middle aligned segment">
     <div class="column">
-        <form class="ui stacked segment form" action="/register" method="POST">
-            <h3 class="ui header">Register</h3>
+        <form class="ui stacked segment form" action="/editmember" method="POST">
+            <h3 class="ui header">Edit details</h3>
+            <h5>Please fill all fields, if you do not wish to change a field, enter the original value</h5>
             <div class="two fields">
                 <div class="field">
                     <label>First Name</label>
@@ -40,10 +52,10 @@
                     <input placeholder="0.0" type="number" name="startingweight">
                 </div>
             </div>
-            <button class="ui blue submit button">Submit</button>
+            <button class="ui blue submit button">Submit Changes</button>
         </form>
     </div>
     <div class="column">
-        <img class="ui rounded centered image" src="/public/images/fitness-1.PNG">
+        <img class="ui centered large rounded image" src="/public/images/fitness-2.PNG">
     </div>
 </div>

@@ -24,6 +24,10 @@ public class MemberDashboard extends Controller{
             }
         }
         String BMICategory=GymUtility.determineBMICategory(BMI);
-        render ("dashboard.html", assessments,member,BMI,BMICategory,isIdealBodyWeight);
+        String colour="red";
+        if(isIdealBodyWeight.equals("Yes")){
+            colour="green";
+        }
+        render ("dashboard.html", assessments,member,BMI,BMICategory,isIdealBodyWeight,colour);
     }
 }

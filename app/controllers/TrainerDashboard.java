@@ -21,11 +21,16 @@ public class TrainerDashboard extends Controller{
         Member member=Member.findById(id);
         List<Assessment> assessments=member.assessments;
         double BMI=Math.round((GymUtility.calculateBMI(member))*100.0)/100.0;
+        String isIdealBodyWeight="No";
         if(!assessments.isEmpty()){
             Assessment assessment=assessments.get(assessments.size()-1);
             BMI=Math.round((GymUtility.calculateBMI(member,assessment))*100.0)/100.0;
+            GymUtility.isIdealBodyWeight(member,assessment);
+            if(GymUtility.isIdealBodyWeight(member,assessment)==true){
+                isIdealBodyWeight="Yes";
+            }
         }
         String BMICategory=GymUtility.determineBMICategory(BMI);
-        render ("member.html",member,assessments,BMI,BMICategory);
+        render ("member.html",member,assessments,BMI,BMICategory,isIdealBodyWeight);
     }
 }

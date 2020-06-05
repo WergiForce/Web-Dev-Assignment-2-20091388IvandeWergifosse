@@ -10,6 +10,7 @@ import java.util.List;
 
 @Entity
 public class Member extends Model{
+
     public String firstname;
     public String lastname;
     public String email;
@@ -22,13 +23,29 @@ public class Member extends Model{
     public List<Assessment> assessments=new ArrayList<Assessment>();
 
     public Member(String firstname,String lastname,String email,String password,String gender,int height, double startingweight){
-        this.firstname=firstname;
-        this.lastname=lastname;
-        this.email=email;
-        this.password=password;
+        setFirstname(firstname);
+        setLastname(lastname);
+        setEmail(email);
+        setPassword(password);
         setGender(gender);
-        this.height=height;
-        this.startingweight=startingweight;
+        setHeight(height);
+        setStartingweight(startingweight);
+    }
+
+    public String getFirstname(){
+        return firstname;
+    }
+
+    public String getLastname(){
+        return lastname;
+    }
+
+    public String getEmail(){
+        return email;
+    }
+
+    public String getPassword(){
+        return password;
     }
 
     public double getHeight(){
@@ -37,6 +54,10 @@ public class Member extends Model{
 
     public double getStartingWeight(){
         return startingweight;
+    }
+
+    public String getGender(){
+        return gender;
     }
 
     public void setGender(String gender) {
@@ -49,8 +70,28 @@ public class Member extends Model{
         }
     }
 
-    public String getGender(){
-        return gender;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public void setStartingweight(double startingweight) {
+        this.startingweight = startingweight;
     }
 
     public static Member findByEmail(String email){

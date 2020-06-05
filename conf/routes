@@ -10,7 +10,9 @@ GET     /trainerlogin                                           TrainerAccounts.
 POST    /tauthenticate                                          TrainerAccounts.tAuthenticate
 GET     /trainerdashboard                                       TrainerDashboard.index
 GET     /login                                                  MemberAccounts.login
+GET     /editmemberdetails                                      MemberAccounts.editMemberDetails
 POST    /register                                               MemberAccounts.register
+POST    /editmember                                             MemberAccounts.editMember
 POST    /registertrainer                                        TrainerAccounts.register
 POST    /authenticate                                           MemberAccounts.authenticate
 GET     /logout                                                 MemberAccounts.logout
