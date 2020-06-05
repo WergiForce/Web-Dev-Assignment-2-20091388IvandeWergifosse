@@ -16,7 +16,8 @@
             <h4>${BMI} (${BMICategory})</h4>
         </div>
         <div class="ui center aligned segment">
-            <i class="big balance scale icon"></i>
+        #{if isIdealBodyWeight == "Yes"}<i class="big green balance scale icon"></i>#{/if}
+        #{elseif isIdealBodyWeight == "No"}<i class="big red balance scale icon"></i>#{/elseif}
             <h3>Ideal Body Weight</h3>
             <h4>${isIdealBodyWeight}</h4>
         </div>
