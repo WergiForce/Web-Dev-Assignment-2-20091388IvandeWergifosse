@@ -1,0 +1,28 @@
+<table class="ui fixed table">
+    <thead>
+    <tr>
+        <th>Member Name</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    #{list items:_trainer.members, as: 'member'}
+        <tr>
+            <td>
+                ${member.firstname + member.lastname}
+            </td>
+            <td>
+                <a href="/members/${member.id}" class="ui icon button">
+                    <i class="icon folder open"></i>
+                </a>
+            </td>
+            <td>
+                <a href="/trainerdashboard/deletemember/${member.id}" class="ui tiny red button">
+                    <i class="icon trash"></i>
+                </a>
+            </td>
+        </tr>
+    #{/list}
+    </tbody>
+</table>

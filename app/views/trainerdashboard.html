@@ -1,0 +1,26 @@
+#{extends 'main.html' /}
+#{set title:'Trainer Dashboard' /}
+
+#{trainermenu id:"dashboard"/}
+
+<header class="ui header">
+    <div class="ui horizontal segments">
+        <div class="ui center aligned segment">
+            <h3>Trainer Dashboard</h3>
+        </div>
+    </div>
+</header>
+
+#{list items:members, as:'member'}
+<section class="ui segment">
+    <h2 class="ui header">
+    ${member.firstname} ${member.lastname}
+    </h2>
+    <a href="/members/${member.id}" class="ui icon button">
+        <i class="icon folder open"></i>
+    </a>
+    <a href="/trainerctrl/deletemember/${member.id}" class="ui icon button">
+        <i class="icon trash"></i>
+    </a>
+</section>
+#{/list}

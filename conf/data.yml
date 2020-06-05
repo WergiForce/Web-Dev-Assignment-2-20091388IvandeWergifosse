@@ -1,0 +1,61 @@
+Assessment(a1):
+  weight: 77.0
+  chest: 38.0
+  thigh: 20.0
+  upperArm: 13.0
+  waist: 32.0
+  hips: 34.0
+
+Assessment(a2):
+  weight: 78.0
+  chest: 38.0
+  thigh: 20.0
+  upperArm: 13.5
+  waist: 32.0
+  hips: 34.0
+
+Assessment(a3):
+  weight: 89.0
+  chest: 45.0
+  thigh: 25.0
+  upperArm: 15.0
+  waist: 42.0
+  hips: 42.0
+
+Assessment(a4):
+  weight: 90.0
+  chest: 45.0
+  thigh: 25.0
+  upperArm: 15.0
+  waist: 42.0
+  hips: 42.0
+
+Member(m1):
+  firstname: Nathan
+  lastname: Drake
+  email: draken@worldexplore.org
+  password: password
+  gender: male
+  height: 180
+  startingweight: 77.0
+  assessments:
+    - a1
+    - a2
+
+Member(m2):
+  firstname: Mario
+  lastname: Mario
+  email: mario@mariobrosplumbing.it
+  password: password
+  gender: male
+  height: 112
+  startingweight: 89
+  assessments:
+    - a3
+    - a4
+
+Trainer(t1):
+  firstname: John
+  lastname: 117
+  email: sierra117@unsc.org
+  password: password
