@@ -1,4 +1,5 @@
 Assessment(a1):
+  timestamp: "2020/05/28 15:30:00"
   weight: 77.0
   chest: 38.0
   thigh: 20.0
@@ -7,6 +8,7 @@ Assessment(a1):
   hips: 34.0
 
 Assessment(a2):
+  timestamp: "2020/05/30 15:30:00"
   weight: 78.0
   chest: 38.0
   thigh: 20.0
@@ -15,6 +17,7 @@ Assessment(a2):
   hips: 34.0
 
 Assessment(a3):
+  timestamp: "2020/05/28 12:30:00"
   weight: 89.0
   chest: 45.0
   thigh: 25.0
@@ -23,6 +26,7 @@ Assessment(a3):
   hips: 42.0
 
 Assessment(a4):
+  timestamp: "2020/06/01 12:30:00"
   weight: 90.0
   chest: 45.0
   thigh: 25.0

@@ -18,7 +18,7 @@ public class TrainerAccounts extends Controller {
         Logger.info("Registering new Trainer "+email);
         Trainer trainer=new Trainer(firstname,lastname,email,password);
         trainer.save();
-        redirect("/dashboard");
+        redirect("/trainerlogin");
     }
 
     public static void tAuthenticate(String email,String password) {

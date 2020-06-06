@@ -1,6 +1,7 @@
 <table class="ui fixed table">
     <thead>
     <tr>
+        <th>Timestamp</th>
         <th>Weight (kg)</th>
         <th>Chest (inches)</th>
         <th>Thigh (inches)</th>
@@ -14,6 +15,9 @@
     <tbody>
         #{list items:_member.assessments, as: 'assessment'}
             <tr>
+                <td>
+                    ${assessment.timestamp}
+                </td>
                 <td>
                     ${assessment.weight}
                 </td>

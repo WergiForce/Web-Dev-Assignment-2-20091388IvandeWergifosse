@@ -1,6 +1,7 @@
 <table class="ui fixed table">
     <thead>
     <tr>
+        <th>Timestamp</th>
         <th>Weight (kg)</th>
         <th>Chest (inches)</th>
         <th>Thigh (inches)</th>
@@ -12,46 +13,49 @@
     </tr>
     </thead>
     <tbody>
-    #{list items:_member.assessments, as: 'assessment'}
-        <tr>
-            <td>
-                ${assessment.weight}
-            </td>
-            <td>
-                ${assessment.chest}
-            </td>
-            <td>
-                ${assessment.thigh}
-            </td>
-            <td>
-                ${assessment.upperArm}
-            </td>
-            <td>
-                ${assessment.waist}
-            </td>
-            <td>
-                ${assessment.hips}
-            </td>
-            <td>
-                ${assessment.comment}
-            </td>
-            <td>
-                <a href="/members/${_member.id}/tdeleteassessment/${assessment.id}" class="ui tiny red button">
-                    <i class="icon trash"></i>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="8">
-                <form class="ui segment form" action="/members/${_member.id}/addcomment/${assessment.id}" method="POST">
-                <div class="field">
-                    <label>Comment</label>
-                    <input placeholder="Please enter comment" type="text" name="comment">
-                </div>
-                <button class="ui blue submit button">Add Comment</button>
-                </form>
-            </td>
-        </tr>
-    #{/list}
+        #{list items:_member.assessments, as: 'assessment'}
+            <tr>
+                <td>
+                    ${assessment.timestamp}
+                </td>
+                <td>
+                    ${assessment.weight}
+                </td>
+                <td>
+                    ${assessment.chest}
+                </td>
+                <td>
+                    ${assessment.thigh}
+                </td>
+                <td>
+                    ${assessment.upperArm}
+                </td>
+                <td>
+                    ${assessment.waist}
+                </td>
+                <td>
+                    ${assessment.hips}
+                </td>
+                <td>
+                    ${assessment.comment}
+                </td>
+                <td>
+                    <a href="/members/${_member.id}/tdeleteassessment/${assessment.id}" class="ui tiny red button">
+                        <i class="icon trash"></i>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <form class="ui segment form" action="/members/${_member.id}/addcomment/${assessment.id}" method="POST">
+                    <div class="field">
+                        <label>Comment</label>
+                        <input placeholder="Please enter comment" type="text" name="comment">
+                    </div>
+                    <button class="ui blue submit button">Add Comment</button>
+                    </form>
+                </td>
+            </tr>
+        #{/list}
     </tbody>
 </table>

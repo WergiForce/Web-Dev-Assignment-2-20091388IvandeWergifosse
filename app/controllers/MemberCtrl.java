@@ -2,6 +2,9 @@ package controllers;
 
 import models.Assessment;
 import models.Member;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import play.Logger;
 import play.mvc.Controller;
 
@@ -9,7 +12,8 @@ public class MemberCtrl extends Controller {
     public static void addAssessment(Long id,double weight,double chest,double thigh,double upperArm,double waist,double hips,String comment){
         Logger.info("Adding a new assessment");
         Member member=MemberAccounts.getLoggedInMember();
-        Assessment assessment=new Assessment(weight,chest,thigh,upperArm,waist,hips,comment);
+        String timestamp=timestamp();
+        Assessment assessment=new Assessment(timestamp,weight,chest,thigh,upperArm,waist,hips,comment);
         member.assessments.add(assessment);
         member.save();
         redirect("/dashboard");
@@ -23,5 +27,12 @@ public class MemberCtrl extends Controller {
         member.save();
         assessment.delete();
         redirect("/dashboard");
+    }
+
+    public static String timestamp(){
+        String timestamp;
+        Date date=new Date();
+        SimpleDateFormat formatter=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        return timestamp=formatter.format(date);
     }
 }

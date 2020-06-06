@@ -17,9 +17,7 @@ public class MemberAccounts extends Controller{
     public static void register(String firstname,String lastname,String email,String password,String gender,int height,double startingweight){
         Logger.info("Registering new user "+email);
         Member member=new Member(firstname,lastname,email,password,gender.toLowerCase(),height,startingweight);
-        Assessment assessment=new Assessment(startingweight,0.0,0.0,0.0,0.0,0.0," ");
         member.save();
-        assessment.save();
         redirect("/dashboard");
     }
 

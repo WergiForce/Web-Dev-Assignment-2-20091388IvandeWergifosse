@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,6 +13,7 @@ import play.db.jpa.Model;
 
 @Entity
 public class Assessment extends Model{
+    public String timestamp;
     public double weight;
     public double chest;
     public double thigh;
@@ -20,7 +22,8 @@ public class Assessment extends Model{
     public double hips;
     public String comment;
 
-    public Assessment(double weight,double chest,double thigh,double upperArm,double waist,double hips,String comment){
+    public Assessment(String timestamp,double weight,double chest,double thigh,double upperArm,double waist,double hips,String comment){
+        setTimestamp(timestamp);
         setWeight(weight);
         setChest(chest);
         setThigh(thigh);
@@ -58,6 +61,10 @@ public class Assessment extends Model{
         this.comment=comment;
     }
 
+    public void setTimestamp(String timestamp){
+        this.timestamp=timestamp;
+    }
+
     public double getWeight() {
         return weight;
     }
@@ -84,5 +91,9 @@ public class Assessment extends Model{
 
     public String getComment(){
         return comment;
+    }
+
+    public String getTimestamp(){
+        return timestamp;
     }
 }

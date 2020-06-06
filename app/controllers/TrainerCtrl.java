@@ -20,7 +20,8 @@ public class TrainerCtrl extends Controller{
 
     public static void addAssessment(Long id,double weight,double chest,double thigh,double upperArm,double waist,double hips,String comment){
         Logger.info("Adding a new assessment");
-        Assessment assessment=new Assessment(weight,chest,thigh,upperArm,waist,hips,comment);
+        String timestamp=MemberCtrl.timestamp();
+        Assessment assessment=new Assessment(timestamp,weight,chest,thigh,upperArm,waist,hips,comment);
         Member member=Member.findById(id);
         member.assessments.add(assessment);
         member.save();
