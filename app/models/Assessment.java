@@ -21,6 +21,7 @@ public class Assessment extends Model{
     public double waist;
     public double hips;
     public String comment;
+    public String trend;
 
     public Assessment(String timestamp,double weight,double chest,double thigh,double upperArm,double waist,double hips,String comment){
         setTimestamp(timestamp);
@@ -65,6 +66,10 @@ public class Assessment extends Model{
         this.timestamp=timestamp;
     }
 
+    public void setTrend(String trend){
+        this.trend=trend;
+    }
+
     public double getWeight() {
         return weight;
     }
@@ -96,4 +101,6 @@ public class Assessment extends Model{
     public String getTimestamp(){
         return timestamp;
     }
+
+
 }

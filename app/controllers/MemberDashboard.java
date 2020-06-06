@@ -14,6 +14,7 @@ public class MemberDashboard extends Controller{
         Member member=MemberAccounts.getLoggedInMember();
         List<Assessment> assessments=member.assessments;
         Collections.reverse(assessments);
+        String trend=GymUtility.trend(member);
         double BMI=Math.round((GymUtility.calculateBMI(member))*100.0)/100.0;
         String isIdealBodyWeight="No";
         if(!assessments.isEmpty()){
@@ -25,10 +26,6 @@ public class MemberDashboard extends Controller{
             }
         }
         String BMICategory=GymUtility.determineBMICategory(BMI);
-        String colour="red";
-        if(isIdealBodyWeight.equals("Yes")){
-            colour="green";
-        }
-        render ("dashboard.html", assessments,member,BMI,BMICategory,isIdealBodyWeight,colour);
+        render ("dashboard.html", assessments,member,BMI,BMICategory,isIdealBodyWeight,trend);
     }
 }

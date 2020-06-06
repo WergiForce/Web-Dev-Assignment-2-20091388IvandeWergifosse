@@ -8,6 +8,7 @@
         <th>Upper Arm (inches)</th>
         <th>Waist (inches)</th>
         <th>Hips (inches)</th>
+        <th>Trend</th>
         <th>Comment</th>
         <th></th>
     </tr>
@@ -35,6 +36,12 @@
                 </td>
                 <td>
                     ${assessment.hips}
+                </td>
+                <td>
+                    #{if assessment.trend == "increase"}<i class="small red arrow circle up icon"></i>#{/if}
+                    #{elseif assessment.trend == "decrease"}<i class="small green arrow circle down icon"></i>#{/elseif}
+                    #{elseif assessment.trend == "static"}<i class="small orange circle icon"></i>#{/elseif}
+                    #{elseif assessment.trend == "Unknown"}<i class="small circle icon"></i>#{/elseif}
                 </td>
                 <td>
                     ${assessment.comment}

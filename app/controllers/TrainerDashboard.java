@@ -22,8 +22,10 @@ public class TrainerDashboard extends Controller{
         Member member=Member.findById(id);
         List<Assessment> assessments=member.assessments;
         Collections.reverse(assessments);
+        String trend=GymUtility.trend(member);
         double BMI=Math.round((GymUtility.calculateBMI(member))*100.0)/100.0;
         String isIdealBodyWeight="No";
+
         if(!assessments.isEmpty()){
             Assessment assessment=assessments.get(0);
             BMI=Math.round((GymUtility.calculateBMI(member,assessment))*100.0)/100.0;
@@ -33,6 +35,6 @@ public class TrainerDashboard extends Controller{
             }
         }
         String BMICategory=GymUtility.determineBMICategory(BMI);
-        render ("member.html",member,assessments,BMI,BMICategory,isIdealBodyWeight);
+        render ("member.html",member,assessments,BMI,BMICategory,isIdealBodyWeight,trend);
     }
 }

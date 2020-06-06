@@ -5,6 +5,7 @@ import models.Assessment;
 import play.data.binding.As;
 import play.mvc.Controller;
 
+import java.util.Collections;
 import java.util.List;
 
 public class GymUtility {
@@ -64,4 +65,27 @@ public class GymUtility {
         }
         return isIdealBodyWeight;
     }
+
+    public static String trend(Member member){
+        List<Assessment> assessments = member.assessments;
+        String trend="Unknown";
+        for(int i=0; i<(assessments.size()-1);i++){
+
+            Assessment assessment=assessments.get(i);
+
+            if(assessment.weight>(assessments.get(i+1).weight)){
+                trend = "decrease";
+                assessments.get(i).setTrend("increase");
+            } else if (assessment.weight<(assessments.get(i+1).weight)) {
+                trend = "increase";
+                assessments.get(i).setTrend("decrease");
+            } else if (assessment.weight==(assessments.get(i+1).weight)){
+                trend = "static";
+                assessments.get(i).setTrend("static");
+            }
+        }
+        return trend;
+    }
+
+
 }
