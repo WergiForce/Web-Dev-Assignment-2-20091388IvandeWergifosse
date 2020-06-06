@@ -8,6 +8,12 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Member model class, creating the model for members to be used throughout the application
+ *
+ * @author Ivan de Wergifosse 20091388
+ */
+
 @Entity
 public class Member extends Model{
 

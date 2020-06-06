@@ -9,6 +9,14 @@ import play.mvc.Controller;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Controller class to render the trainer dashboard and display all members registered to the system and provide
+ * functionality to delete a member or view individual member profiles, also provides the same assessment functionality
+ * as a member (add/remove assessments) with the addition of commenting on individual assessments.
+ *
+ * @author Ivan de Wergifosse 20091388
+ */
+
 public class TrainerDashboard extends Controller{
     public static void index() {
         Logger.info("Rendering Trainer Dashboard");

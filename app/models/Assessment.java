@@ -1,15 +1,14 @@
 package models;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import models.Member;
 
 import play.db.jpa.Model;
+
+/**
+ * Assessment model class, creating the model for assessments to be used throughout the application
+ *
+ * @author Ivan de Wergifosse 20091388
+ */
 
 @Entity
 public class Assessment extends Model{

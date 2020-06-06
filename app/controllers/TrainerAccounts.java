@@ -5,6 +5,13 @@ import models.Trainer;
 import play.Logger;
 import play.mvc.Controller;
 
+/**
+ * Member Account controller class to control various aspects of a trainer account, such as rendering the trainer signup page, registering a new trainer,
+ * rendering the trainer login page, authenticating sign in, logging out and providing the logged in trainer for a session.
+ *
+ * @author Ivan de Wergifosse 20091388
+ */
+
 public class TrainerAccounts extends Controller {
     public static void signup(){
         render("trainersignup.html");

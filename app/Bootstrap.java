@@ -6,6 +6,12 @@ import play.test.*;
 
 import models.*;
 
+/**
+ * Bootstrap class to load data from a yml, specifically data.yml
+ *
+ * @author Eamonn de Leastar
+ */
+
 @OnApplicationStart
 public class Bootstrap extends Job {
     public void doJob() {

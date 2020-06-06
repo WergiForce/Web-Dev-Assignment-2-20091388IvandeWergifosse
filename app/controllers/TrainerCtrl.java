@@ -1,11 +1,17 @@
 package controllers;
 
-
 import models.Assessment;
 import models.Member;
 import models.Trainer;
 import play.Logger;
 import play.mvc.Controller;
+
+/**
+ * Trainer control class providing functionality for trainers to add and remove member assessments, and provide a timestamp for
+ * newly added assessments, comment on assessments, and delete members entirely.
+ *
+ * @author Ivan de Wergifosse 20091388
+ */
 
 public class TrainerCtrl extends Controller{
     public static void deleteMember(Long id){

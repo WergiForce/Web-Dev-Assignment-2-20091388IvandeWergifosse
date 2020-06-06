@@ -1,9 +1,16 @@
 package controllers;
 
 import models.Member;
-import models.Assessment;
 import play.Logger;
 import play.mvc.Controller;
+
+/**
+ * Member Account controller class to control various aspects of a member account, such as rendering the member signup page, registering a new member,
+ * rendering the member login page, authenticating sign in, logging out, providing the logged in member for a session and rendering the edit member details
+ * pages and providing functionality.
+ *
+ * @author Ivan de Wergifosse 20091388
+ */
 
 public class MemberAccounts extends Controller{
     public static void signup(){

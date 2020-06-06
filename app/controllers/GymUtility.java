@@ -2,13 +2,19 @@ package controllers;
 
 import models.Member;
 import models.Assessment;
-import play.data.binding.As;
 import play.mvc.Controller;
 
-import java.util.Collections;
 import java.util.List;
 
-public class GymUtility {
+/**
+ * GymUtility class that provides methods for various gym utility functions
+ * such as calculating BMI, determining BMI category, checking if the
+ * user is at the ideal body weight for their gender and height and tracking weight trend.
+ *
+ * @author Ivan de Wergifosse 20091388
+ */
+
+public class GymUtility extends Controller{
     private static double BMI;
 
     public static double calculateBMI(Member member,Assessment assessment){

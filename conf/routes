@@ -6,28 +6,32 @@
 GET     /                                                       Start.index
 GET     /signup                                                 MemberAccounts.signup
 GET     /trainersignup                                          TrainerAccounts.signup
+GET     /login                                                  MemberAccounts.login
+GET     /admin                                                  Admin.index
 GET     /trainerlogin                                           TrainerAccounts.login
+
+# Trainer functions
+POST    /registertrainer                                        TrainerAccounts.register
 POST    /tauthenticate                                          TrainerAccounts.tAuthenticate
 GET     /trainerdashboard                                       TrainerDashboard.index
-GET     /login                                                  MemberAccounts.login
+GET     /members/{id}                                           TrainerDashboard.memberView
+POST    /members/{id}/taddassessment                            TrainerCtrl.addAssessment
+GET     /trainerctrl/deletemember/{id}                          TrainerCtrl.deleteMember
+GET     /members/{id}/tdeleteassessment/{assessmentid}          TrainerCtrl.deleteAssessment
+POST    /members/{id}/addcomment/{assessmentid}                 TrainerCtrl.addComment
+
+# Member functions
 GET     /editmemberdetails                                      MemberAccounts.editMemberDetails
 POST    /register                                               MemberAccounts.register
 POST    /editmember                                             MemberAccounts.editMember
-POST    /registertrainer                                        TrainerAccounts.register
 POST    /authenticate                                           MemberAccounts.authenticate
 GET     /logout                                                 MemberAccounts.logout
 GET     /dashboard                                              MemberDashboard.index
 GET     /about                                                  About.index
-GET     /member                                                 TrainerDashboard.memberView
-GET     /admin                                                  Admin.index
-GET     /members/{id}                                           TrainerDashboard.memberView
 GET     /assessment/{id}                                        MemberDashboard.index
 POST    /memberctrl/addassessment                               MemberCtrl.addAssessment
-POST    /members/{id}/taddassessment                            TrainerCtrl.addAssessment
 GET     /members/{id}/deleteassessment/{assessmentid}           MemberCtrl.deleteAssessment
-GET     /trainerctrl/deletemember/{id}                          TrainerCtrl.deleteMember
-GET     /members/{id}/tdeleteassessment/{assessmentid}          TrainerCtrl.deleteAssessment
-POST    /members/{id}/addcomment/{assessmentid}                 TrainerCtrl.addComment
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

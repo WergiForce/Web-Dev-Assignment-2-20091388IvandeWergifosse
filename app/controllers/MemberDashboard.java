@@ -8,6 +8,13 @@ import play.mvc.Controller;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Controller class to render the member dashboard and provide relevant information for the display such as assessment lists,
+ * BMI, weight trend and ideal weight indicators. Also inverts the assessment list to display newest assessments first.
+ *
+ * @author Ivan de Wergifosse 20091388
+ */
+
 public class MemberDashboard extends Controller{
     public static void index() {
         Logger.info("Rendering Dashboard");

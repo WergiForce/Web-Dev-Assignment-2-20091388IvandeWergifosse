@@ -5,10 +5,16 @@ import models.Member;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import play.Logger;
 import play.mvc.Controller;
+
+/**
+ * Member control class providing functionality for members to add and remove assessments, and provide a timestamp for
+ * newly added assessments.
+ *
+ * @author Ivan de Wergifosse 20091388
+ */
 
 public class MemberCtrl extends Controller {
     public static void addAssessment(Long id,double weight,double chest,double thigh,double upperArm,double waist,double hips,String comment){
