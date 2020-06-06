@@ -5,7 +5,7 @@ import models.Member;
 import play.Logger;
 import play.mvc.Controller;
 
-
+import java.util.Collections;
 import java.util.List;
 
 public class MemberDashboard extends Controller{
@@ -13,10 +13,11 @@ public class MemberDashboard extends Controller{
         Logger.info("Rendering Dashboard");
         Member member=MemberAccounts.getLoggedInMember();
         List<Assessment> assessments=member.assessments;
+        Collections.reverse(assessments);
         double BMI=Math.round((GymUtility.calculateBMI(member))*100.0)/100.0;
         String isIdealBodyWeight="No";
         if(!assessments.isEmpty()){
-            Assessment assessment=assessments.get(assessments.size()-1);
+            Assessment assessment=assessments.get(0);
             BMI=Math.round((GymUtility.calculateBMI(member,assessment))*100.0)/100.0;
             GymUtility.isIdealBodyWeight(member,assessment);
             if(GymUtility.isIdealBodyWeight(member,assessment)==true){
