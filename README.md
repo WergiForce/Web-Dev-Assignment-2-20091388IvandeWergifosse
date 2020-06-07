@@ -1,4 +1,4 @@
-# play-gym Ivan de Wergifosse 20091388
+# Play-Gym Ivan de Wergifosse 20091388
 
 This is my Assignment 2 for the WIT [Web Development](https://tutors-design.netlify.com/course/wit-hdip-comp-sci-2020-web-development.netlify.com) module.
 
@@ -20,4 +20,4 @@ Demo trainer email: sierra117@unsc.org
 
 For ease, all passwords are "password".
 
-The application has been deployed to: [link to come]
+The application has been deployed to: https://play-gym-ivandewergifosse.herokuapp.com/

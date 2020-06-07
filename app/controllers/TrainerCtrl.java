@@ -2,7 +2,6 @@ package controllers;
 
 import models.Assessment;
 import models.Member;
-import models.Trainer;
 import play.Logger;
 import play.mvc.Controller;
 
@@ -14,12 +13,10 @@ import play.mvc.Controller;
  */
 
 public class TrainerCtrl extends Controller{
+
     public static void deleteMember(Long id){
         Logger.info("Deleting a member");
-        Trainer trainer=TrainerAccounts.getLoggedInTrainer();
         Member member=Member.findById(id);
-        trainer.members.remove(member);
-        trainer.save();
         member.delete();
         redirect("/trainerdashboard");
     }
